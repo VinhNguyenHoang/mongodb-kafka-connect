@@ -1,0 +1,12 @@
+{
+    "name": "mongodb-sink",
+    "config": {
+        "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
+        "topics": "mongodb.stg.blocks",
+        "task.max": "1",
+        "connection.uri": "mongodb://root:root@mongodb2-0.mongodb2-headless.default.svc.cluster.local:27017,mongodb2-1.mongodb2-headless.default.svc.cluster.local:27017/?replicaSet=rs0",
+        "database": "stg",
+        "collection": "blocks",
+        "change.data.capture.handler":"com.mongodb.kafka.connect.sink.cdc.mongodb.ChangeStreamHandler"
+    }
+}
